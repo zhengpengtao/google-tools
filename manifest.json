@@ -1,0 +1,21 @@
+{
+  "name":"devtools",
+  "version":"1.0.0",
+  "minimum_chrome_version":"18.0",
+  "description": "show request url",
+  "devtools_page": "devtools.html",
+  "permissions":["webRequest","webRequestBlocking", "storage", "tabs", "https://*/", "http://*/"],
+  "background":{
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [{
+    "matches": ["https://*/*"],
+    "js": ["js/jquery-3.1.1.min.js", "js/index.js"]
+  }],
+  "manifest_version":2,
+  "browser_action": {
+    "default_title": "vip video",
+    "default_icon": "img/video.png"
+  }
+}
